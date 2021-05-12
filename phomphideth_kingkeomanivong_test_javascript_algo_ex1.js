@@ -1,6 +1,5 @@
 let toVerify = [[], [], [], [], [], [], [], [], []];
 
-let toVerify = [[], [], [], [], [], [], [], [], []];
 function readTable(tableSource, tableTarget) {
     //if (tableSource.length === 9) {
         for (let i = 0; i < tableSource.length ; i++) {
@@ -10,7 +9,7 @@ function readTable(tableSource, tableTarget) {
         }
     //}
 }
-function affiche(table) {
+function affiche(table,tabId) {
     let myTableHTML = ''; // '<table id="sudoku-table">';
     for (let i = 0; i < table.length; i++) {
         myTableHTML += '<tr>'
@@ -19,10 +18,10 @@ function affiche(table) {
         }
         myTableHTML += '</tr>'
     }
-    let elt = document.getElementById('sudoku-table');
+    let elt = document.getElementById(tabId);
     elt.innerHTML = myTableHTML;
 }
 
 // Lecture de la table array_number dans toVerify
 readTable(array_number,toVerify);
-affiche(toVerify);
+affiche(toVerify,'sudoku-table');
